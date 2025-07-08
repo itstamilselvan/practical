@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="formController">
+    <h2>form submission</h2>
+    <form action="">
+        <label for="">name</label>
+        <input type="text" ng-model="user.name">
+        <label for="">email</label>
+        <input type="email" ng-model="user.email">
+        <label for="">message</label>
+        <textarea name="" id="" ng-model="user.message"></textarea>
+        <button type="submit" ng-click="submitForm()">submit</button>
+    </form>
+
+      <h2>username : {{user.name}}</h2>
+      <h2>useremail : {{user.email}}</h2>
+      <h2>usermessage : {{user.message}}</h2>
+
+    <script>
+        angular.module('app',[])
+        .controller('formController',['$scope',function($scope){
+            $scope.user={};
+            $scope.submitForm=function(){
+                alert("form successfully sumitted");
+            };
+        }]);
+    </script>
+    
+</body>
+</html>
