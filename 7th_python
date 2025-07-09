@@ -1,0 +1,13 @@
+file = open(r"C:\Users\Tamil selvan\documents\trail.txt", "r")
+no_of_words= 0
+no_of_lines=0
+no_of_character=0
+for line in file:
+    no_of_lines+=1
+    line= line.strip("\n")
+    print(line)
+    words=line.split()
+no_of_words+=len(words)
+no_of_character+=len(line)
+file.close()
+print("words:",no_of_words,"line",no_of_lines,"character:",no_of_character)
