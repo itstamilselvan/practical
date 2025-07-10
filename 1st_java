@@ -1,0 +1,82 @@
+package basic1;
+
+class employee
+{
+	int id;
+	String name;
+	float salary;
+	
+	public employee(int id,String name,float salary)
+	{
+		this.id=id;
+		this.name=name;
+		this.salary=salary;
+	}
+	
+	public int getId()
+	{
+		return id;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public float getSalary()
+	{
+		return salary;
+	}
+	public void setId(int id)
+	{
+		this.id=id;
+	}
+	public void setName(String name)
+	{
+		this.name=name;
+	}
+	public void setSalary(float salary)
+	{
+		this.salary=salary;
+	}
+	
+	public void display()
+	{
+		System.out.println(name);
+		System.out.println(id);
+		System.out.println(salary);
+	}
+}
+
+class department extends employee
+{
+	String department_name;
+	public department(int id ,String name, float salary,String department_name)
+	{
+		super(id,name,salary);
+		this.department_name=department_name;
+	}
+	
+	public String getDepartment_name()
+	{
+		return department_name;
+	}
+	public void setDepartment_name(String department_name)
+	{
+		this.department_name=department_name;
+	}
+	public void display()
+	{
+		super.display();
+		System.out.println(department_name);
+	}
+}
+
+public class inheritance {
+	public static void main(String[] args) {
+		employee e = new employee(1,"tamil",6700);
+		e.display();
+		department d = new department(1,"tamil",6700,"analyst");
+		d.display();
+		
+	}
+
+}
