@@ -1,0 +1,44 @@
+package basic1;
+import java.util.Scanner;
+import java.io.*;
+public class fileclass {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("enter your file :");
+		String file_name=sc.nextLine();
+		File f = new File(file_name);
+		if(f.exists())
+		{
+			System.out.println("the file" + file_name + "is exist");
+		}
+		else
+		{
+			System.out.println("the file" + file_name + "are not exist");
+		}
+		if(f.exists())
+		{
+			if(f.canRead())
+			{
+				System.out.println("the file" + file_name + "can be readable");
+			}
+			else
+			{
+				System.out.println("the file" + file_name + "cannot be readable");
+			}
+			if(f.canWrite())
+			{
+				System.out.println("the file" + file_name + "can be writeable");
+			}
+			else
+			{
+				System.out.println("the file" + file_name + "not be writeable");
+			}
+		}
+		
+		System.out.println("filetype is "+ file_name.substring(file_name.indexOf('.')+1));
+		System.out.println("lenght of file"+f.length());
+		
+	
+	}
+
+}
