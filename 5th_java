@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        body {
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+      
+    
+    </style>
+    
+</head>
+<body ng-app="guessApp" ng-controller="guessthenumbercontroller">
+    <h2>guess th number</h2>
+    <div>guess th number between 1 to 100</div>
+    <label for="">your guess </label>
+    <input type="number" id="guess" ng-model="guess"/>
+    <button ng-click="verifyguess()" class="btn btn-primary">verify</button>
+    <button ng-click="initializegame()" class="btn btn-warning">restart</button>
+    <p ng-show="deviation<0" class="alert alert-warning"> your guess is higher</p>
+    <p ng-show="deviation>0" class="alert alert-warning"> your guess is lower</p>
+    <p ng-show="deviation===0" class="alert alert-success"> you guessed it right</p>
+    <p>number of guess :{{nooftries}}</p>
+
+    <script>
+    angular.module('guessApp', [])
+    .controller('guessthenumbercontroller',function($scope){
+        $scope.verifyguess=function()
+        {
+            $scope.deviation= $scope.original-$scope.guess;
+            $scope.nooftries=$scope.nooftries+1;
+        }
+        $scope.initializegame=function()
+        {
+            $scope.nooftries=0;
+            $scope.original=Math.floor((Math.random()*1000)+1);
+            $scope.guess=null;
+            $scope.deviation=null;
+        }
+        $scope.initializegame();
+    });
+    </script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
