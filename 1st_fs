@@ -1,65 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Chat Module</title>
-<link rel="stylesheet" href="./css/bootstrap.min.css">
-<!-- <link rel="stylesheet" href="./Ex2.css"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-<section class="">
-<!-- <div class="container-fluid"> -->
-<!-- <div class="row"> -->
-<!-- <div class="col-lg-6 vh-100 bg-danger"> -->
-<div class="vh-100 bg-success" id="user2-feed"></div>
-<div class="chat-input">
-<div class="Chatcontainer">
-<img src="download.jpg" alt="Avatar">
-<input type="text" id="user1-input"
-placeholder="User 1:Type your message">
-<button
-onclick="sendMessage('user1')">Send</button>
-</div>
-</div>
-</div>
-<!-- <div class="col-lg-6 vh-100 bg-primary"> -->
-<div class="vh-100 bg-warning" id="user1-feed"></div>
-<div class="chat-input">
-<div class="Chatcontainer darker">
-<img src="download.jpg" alt="Avatar">
-<input type="text" id="user2-input"
-placeholder="User 2:Type your message">
-<button
-onclick="sendMessage('user2')">Send</button>
-</div> </div> </div> </div> </div> 
-</section>
-<script>
-function sendMessage(user) {
-var inputElement = document.getElementById(user + '-input');
-var message = inputElement.value;
-inputElement.value = '';
-var feedElement = document.getElementById(user + '-feed');
-var messageElement = document.createElement('div');
-messageElement.id = 'container1';
-if (user=="user1")
-{
-messageElement.className = 'Chatcontainer';
-messageElement.innerHTML = '<img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="Avatar">';
-}
-else
-{
-messageElement.className = 'Chatcontainer darker';
-messageElement.innerHTML = '<img src="https://www.w3schools.com//w3images/avatar_g2.jpg" alt="Avatar">';
-}
-messageElement.innerHTML +='<span>'; 
-    messageElement.innerHTML += new
-Date().toLocaleTimeString(); //Date();
-messageElement.innerHTML +='</span>';
-messageElement.innerHTML +='<p>';
-messageElement.innerHTML +=message;
-messageElement.innerHTML +='</p>';
-feedElement.appendChild(messageElement);
-feedElement.scrollTop = feedElement.scrollHeight; }
-</script>
+    <h2>help us in collecting data</h2>
+    <form action="" id="contact-form">
+        <label for="">enter your name</label>
+        <input type="text" placeholder="name" ng-model="user.name" id="name">
+        <label for="">email address </label>
+        <input type="email" placeholder="email" ng-model="user.email" id="email">
+        <button onclick="getvalues()">Submit</button>
+    </form>
+    <script>
+         function getvalues(){
+          var name = getInputval('name');
+         var email = getInputval('email');
+         document.getElementById('contact-form').reset();
+         alert("thanks for giving your details" + name + " " + email);
+        }
+
+        function getInputval(id) {
+            return document.getElementById(id).value;
+        }
+    </script>
 </body>
-</html> 
+</html>
