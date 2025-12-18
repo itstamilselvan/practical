@@ -1,0 +1,50 @@
+ 
+setwd("E:\\sample") 
+getwd() 
+sample=read.csv("k1.csv") 
+data <- read.csv("k1.csv") 
+head(sample) 
+ 
+sal<-max(data$salary) 
+print(sal) 
+salaries<-(data$salary) 
+salaries 
+names<-(data$name) 
+names 
+summary(data$salary) 
+ 
+salarybar<-c(names,salaries, byrow=FALSE) 
+barplot(data$salary,main="SALARY",ylab='salary', 
+xlab ="name", col="blue", 
+horiz=FALSE,beside=TRUE) 
+hist(data$salary) 
+colnames<-c(data$name) 
+colnames 
+rowname<-c(data$sa) 
+
+// chat gpt
+
+setwd("E:\\sample")
+
+data <- read.csv("k1.csv")
+
+head(data)
+
+max_salary <- max(data$salary)
+print(max_salary)
+
+salaries <- data$salary
+emp_names <- data$name
+
+summary(data$salary)
+
+barplot(
+  salaries,
+  main = "SALARY",
+  ylab = "Salary",
+  xlab = "Employee Name",
+  col = "blue",
+  names.arg = emp_names
+)
+
+hist(salaries)
