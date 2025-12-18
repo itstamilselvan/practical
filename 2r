@@ -1,0 +1,15 @@
+>vec<-c(1,2,3,4,5) 
+> multivec<-vec*2 
+> multivec 
+[1]2468 10 
+> vec2<-c(6,7,8,9,10) 
+> vector_add<-vec+vec2 
+> vector_mul<-vec*vec2 
+> vector_mul 
+[1]614243650 
+> vector_sub<-vec2-vec 
+> vector_sub 
+[1]55555 
+> vector_div<-multivec/vec 
+> vec_seq<-seq(from=1,to=20,length=30) 
+> vec_seq
